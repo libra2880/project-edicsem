@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view contentType="text/html" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.prime.com.tr/ui">
+	<h:head>
+		<meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
+			<title>Ingreso al Sistema</title>
+		<link type="text/css" rel="stylesheet" href="themes/aristo/skin.css" />
+		<style type="text/css">
+.ui-layout-top {
+	z-index: 20 !important;
+	overflow: visible !important;;
+}
+
+.ui-layout-top .ui-layout-unit-content {
+	overflow: visible !important;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	font-size: 0.8em;
+	color: #000000;
+}
+</style>
+	</h:head>
+
+
+	<f:loadBundle var="msg"
+		basename="com.wgd.pe.jsf.resources.message" />
+
+
+	<h:form>
+
+		<div align="center" style="margin-bottom: 60px">
+
+			<table border="0" width="100%">
+				<tr style="height: 220px">
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<td></td>
+					<!-- LOGIN -->
+					<td align="center"><p:panel header="Ingreso al Sistema"
+							style="width:300px">
+							<table>
+								<tr>
+									<td><h:outputText value="#{msg.usuario_login}" /></td>
+									<td><p:inputText id="usuario" value="#{login.usuario}" maxlength="15" /></td>
+								</tr>
+								<tr>
+									<td><h:outputText value="#{msg.usuario_contrasenia}" /></td>
+									<td><p:password id="password" minLength="15"  value="#{login.contrasenia}" maxlength="15" feedback="false"/></td>
+								</tr>
+								<tr>
+									<td colspan="2">
+										<div align="center">
+											<p:commandButton value="Ingresar al Sistema"
+												action="#{login.login}" ajax="false" />
+										</div>
+									</td>
+								</tr>
+								<tr>
+								<td colspan="2"><h:link value="¿No tienes cuenta?" outcome="#"/> </td>
+								</tr>
+							</table>
+						</p:panel></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+
+			</table>
+			<p:growl life="6000" showDetail="true" showSummary="true" />
+
+		</div>
+	</h:form>
+
+</f:view>

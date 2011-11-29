@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view contentType="text/html" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui">
+	<h:head>
+
+		<meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
+		<ui:insert name="title">
+			<title>Men&uacute; Principal</title>
+		</ui:insert>
+		<link type="text/css" rel="stylesheet" href="themes/aristo/skin.css" />
+		<style type="text/css">
+.ui-layout-top {
+	z-index: 20 !important;
+	overflow: visible !important;;
+}
+
+.ui-layout-top .ui-layout-unit-content {
+	overflow: visible !important;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	font-size: 0.8em;
+	color: #000000;
+}
+
+.ui-widget {
+	font-size: 75%;
+}
+</style>
+	</h:head>
+
+
+	<p:layout fullPage="true" style="border: 0px;">
+
+		<p:layoutUnit position="top" height="105"
+			styleClass="title ui-widget-header">
+
+			<h:panelGrid columns="10" width="100%">
+
+				<div align="left" style="width: 80%">
+					
+					<table>
+						<tr>
+
+							<td></td>
+						</tr>
+						<tr>
+
+							<td></td>
+						</tr>
+					</table>
+					<p:spacer />
+
+					<font face="Calibri" style="font-size: 2.8em; font-weight: bold;">
+						Sistema EDICIONES SEMBRANDO SAC </font>
+					<p:spacer />
+				</div>
+
+
+
+				<div align="right" style="width: 50%">
+					<h:form>
+						<div align="right" style="width: 100%">
+							<p:spacer width="20" />
+							<p:commandButton title="Salir del sistema"
+								oncomplete="inicio.show()"
+								style="background: url('images/botton/salirsistema.png') no-repeat;
+												background-position: center bottom; width: 24px; 
+												height: 24px; border:0" />
+						</div>
+					</h:form>
+				</div>
+
+			</h:panelGrid>
+		</p:layoutUnit>
+
+		<p:layoutUnit position="left" width="250" resizable="true"
+			collapsible="true" header="Options" minSize="180">
+			<h:form>
+						<p:menu style="width:100%" >
+							<p:submenu label="Opciones del sistema" >
+								<p:menuitem value="Subir Archivos " update="messages" ajax="false" />
+							</p:submenu>
+							<p:submenu label="Opciones Secundarias">
+								<p:menuitem value="Proyectos" update="messages" ajax="false" />
+								<p:menuitem value="Visor de Datos" ajax="false" />
+								<p:menuitem value="Operadoras" ajax="false"/>
+							</p:submenu>
+							<p:submenu label="Respecto al Usuario">
+								<p:menuitem value="Generar Reporte" update="messages" ajax="false" />
+							</p:submenu>
+						</p:menu>
+			</h:form>
+		</p:layoutUnit>
+
+		<p:layoutUnit id="center" position="center" scrollable="true">
+
+			<ui:insert name="body" />
+
+		</p:layoutUnit>
+
+	</p:layout>
+
+	<p:dialog header="Formulario de Proyectos" widgetVar="dlgProyectos"
+		modal="true" closeOnEscape="false" width="850" height="700">
+		<h:form id="frmProyecto">
+			<table >
+				<tr>
+					<td align="right"><h:outputText value="Código" /></td>
+					<td><p:inputText value="#{archivosBDBM.objProyecto.codPro}" /></td>
+					<td colspan="3"></td>
+				</tr>
+				<tr>
+					<td align="right"><h:outputText value="Proyecto" /></td>
+					<td colspan="4" width="100%"><p:inputTextarea
+							value="#{archivosBDBM.objProyecto.desProy}"
+							style="width:600px;height:50px;" effectDuration="200" /></td>
+				</tr>
+				<tr>
+					<td align="right"><h:outputText value="PIM" /></td>
+					<td colspan="2" width="100%"><p:inputMask
+							mask="#{archivosBDBM.objProyecto.tamanioPIM}"
+							value="#{archivosBDBM.objProyecto.pimProy}" /></td>
+					<td align="right"><h:outputText value="Ejecución" /></td>
+					<td><p:inputText /></td>
+				</tr>
+				<tr>
+					<td align="right"><h:outputText value="P. Participativo" /></td>
+					<td><h:selectOneListbox size="1">
+							<f:selectItem itemValue="1" itemLabel="Si" />
+							<f:selectItem itemValue="2" itemLabel="No" />
+						</h:selectOneListbox></td>
+					<td></td>
+					<td align="right"><h:outputText value="Año" /></td>
+					<td><h:selectOneListbox size="1">
+							<f:selectItem itemValue="1" itemLabel="2007" />
+							<f:selectItem itemValue="2" itemLabel="2008" />
+							<f:selectItem itemValue="3" itemLabel="2009" />
+							<f:selectItem itemValue="4" itemLabel="2010" />
+							<f:selectItem itemValue="5" itemLabel="2011" />
+							<f:selectItem itemValue="6" itemLabel="2012" />
+							<f:selectItem itemValue="7" itemLabel="2013" />
+						</h:selectOneListbox></td>
+				</tr>
+				<tr>
+					<td align="right"><h:outputText value="Cod. SNIP" /></td>
+					<td width="100%"><p:autoComplete value="#{archivosBDBM.codigoSNIP}" size="65" 
+								completeMethod="#{archivosBDBM.completeCC}" onSelectUpdate="frmProyecto" 
+								selectListener="#{archivosBDBM.mostrarFuncion}" /></td>
+				</tr>
+				<tr>
+					<td align="right"><h:outputText value="Función" /></td>
+					<td colspan="3" width="100%"><p:inputText value="#{archivosBDBM.descripcionFuncion}" size="40"/></td>
+				</tr>
+				<tr>
+					<td align="right"><h:outputText value="Beneficiarios" /></td>
+					<td width="100%"><p:inputText value="#{archivosBDBM.objProyecto.beneficiaro}"/></td>
+					<td></td>
+					<td width="100%" colspan="2"><h:outputText value="Hombres" />
+						<p:inputText size="3" value="#{archivosBDBM.objProyecto.hombres}"/> <p:spacer width="10" /> <h:outputText
+							value="Mujeres" />
+						<p:inputText size="3" value="#{archivosBDBM.objProyecto.mujeres}"/></td>
+				</tr>
+				<tr>
+					<td align="right"><h:outputText value="Estado" /></td>
+					<td colspan="3"><h:selectOneListbox size="1" value="#{archivosBDBM.objProyecto.tbEstadoinv.id_estadoInv}">
+							<f:selectItems value="#{archivosBDBM.listarEstadoInversion}"/>
+						</h:selectOneListbox></td>
+				</tr>
+				<tr>
+					<td align="right"><h:outputText value="Responsable" /></td>
+					<td colspan="3"><p:inputText value="#{archivosBDBM.objProyecto.responsable}"/></td>
+				</tr>
+				<tr>
+					<td align="right"><h:outputText value="Modalidad" /></td>
+					<td colspan="2"><h:selectOneListbox size="1" value="#{archivosBDBM.objProyecto.idmodalidad}">
+							<f:selectItem itemValue="1" itemLabel="Administración Directa" />
+							<f:selectItem itemValue="2" itemLabel="Por Contrato" />
+						</h:selectOneListbox></td>
+				</tr>
+				<tr>
+					<td align="right"><h:outputText value="Valor SNIP" /></td>
+					<td><p:inputText value="#{archivosBDBM.montoSNIP}" /> </td>
+					<td></td>
+					<td align="right"><h:outputText value="Valor Referencial" />
+					</td>
+					<td><p:inputText value="#{archivosBDBM.montoSNIP}"/></td>
+				</tr>
+				<tr>
+					<td align="right"><h:outputText value="Valor Exp. Técnico" />
+					</td>
+					<td colspan="2"><p:inputText /></td>
+				</tr>
+				<tr>
+					<td align="right"><h:outputText value="Valor Adjudicado" /></td>
+					<td colspan="2"><p:inputText /></td>
+				</tr>
+				<tr>
+					<td align="right"><h:outputText value="Adicionales(Acumulado)" />
+					</td>
+					<td colspan="2" width="100%"><p:inputText /></td>
+					<td align="right"><h:outputText value="Avance Físico" /></td>
+					<td><p:inputText
+							value="#{archivosBDBM.objProyecto.avanceProy} %" />
+					</td>
+				</tr>
+				<tr>
+					<td align="right"><h:outputText value="Documento Sustento" />
+					</td>
+					<td colspan="3" width="100%"><p:inputText /></td>
+				</tr>
+				<tr>
+					<td align="right"><h:outputText value="Fecha de Culminación" />
+					</td>
+					<td><p:calendar showOn="button" /></td>
+					<td colspan="2"></td>
+					<td width="100%"><h:selectBooleanCheckbox
+							label="Seleccionar para Analisis" />
+						<h:outputText value="Seleccionar para Análisis" /></td>
+				</tr>
+				<tr>
+					<td align="right"><h:outputText value="Observaciones" /></td>
+					<td colspan="5" width="100%"><p:inputTextarea
+							style="width:600px;height:50px;" effectDuration="200" /></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="right"><p:commandButton value="Grabar" />
+					</td>
+					<td colspan="3"><p:commandButton value="Cancelar"
+							onclick="dlgProyectos.hide()" type="button" /></td>
+				</tr>
+			</table>
+		</h:form>
+	</p:dialog>
+
+	<p:dialog modal="true" widgetVar="statusDialog" header="Enviando ..."
+		draggable="false" closable="false" closeOnEscape="false"
+		resizable="false">
+		<p:graphicImage value="images/ajaxloadingbar.gif" />
+	</p:dialog>
+
+	<p:dialog header="Permiso de Registro" modal="true"
+		widgetVar="registarBD" closable="false" resizable="false"
+		closeOnEscape="false">
+		<h:form>
+			<table>
+				<tr>
+					<td colspan="2"><h:outputText value="#{msg.registro_All_bd}" />
+					</td>
+				</tr>
+				<tr>
+					<td><p:commandButton onstart="statusDialog.show()"
+							oncomplete="statusDialog.hide()" onsuccess="statusDialog.hide()"
+							value="#{msg.registro_aceptar}" action="#{archivoMB.llenarBD}"
+							ajax="false" /></td>
+					<td><p:commandButton onclick="registarBD.hide()"
+							value="#{msg.registro_cancelar}" /></td>
+				</tr>
+			</table>
+		</h:form>
+	</p:dialog>
+</f:view>
