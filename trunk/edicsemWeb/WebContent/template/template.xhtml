@@ -94,6 +94,11 @@ body {
 							<p:submenu label="Respecto al Usuario">
 								<p:menuitem value="Generar Reporte" update="messages" ajax="false" />
 							</p:submenu>
+					
+							<p:submenu label="Mantenimientos">
+								<p:menuitem value="Productos" update="messages" ajax="false" action="#{cardex.registroProducto}" />
+							</p:submenu>
+					
 						</p:menu>
 			</h:form>
 		</p:layoutUnit>
