@@ -16,7 +16,6 @@ public class Login {
 	private String contrasenia;
 	
 	@EJB private SeguridadFacade objFacadeSeguridad; 
-	
 
 	public Login() {
 		usuario = "";
