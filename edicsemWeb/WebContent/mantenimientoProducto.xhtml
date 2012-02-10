@@ -49,30 +49,51 @@ body {
 					<td></td>
 					<!-- LOGIN -->
 					<td align="center"><p:panel header="#{msg.mantenimiento_producto_titulo}"
-							style="width:300px">
-							<table>
+							style="width:80%">
+							<table width="100%"  >
 								
 								<tr>
-									<td><h:outputText value="#{msg.codigo_producto}" /></td>
-									<td><p:inputText id="usuario" value="#{login.usuario}" maxlength="15" /></td>
+									<td ><h:outputText value="#{msg.codigo_producto}" /></td>
+									<td ><p:inputText id="codigoProducto" value="#{login.usuario}" maxlength="15" /></td>
+									<td ><h:outputText value="#{msg.fabricante_editorial}" /></td>
+									<td colspan="2"><h:selectOneListbox size="1" value="#{archivosBDBM.objProyecto.idmodalidad}">
+							<f:selectItem itemValue="1" itemLabel="-- Seleccione --" />
+							<f:selectItem itemValue="2" itemLabel="Sembrano" />
+						</h:selectOneListbox></td>
+									
+									<td ><h:outputText value="#{msg.anio}" /></td>
+									<td colspan="2" >
+									<h:selectOneListbox size="1" value="#{archivosBDBM.objProyecto.idmodalidad}">
+							<f:selectItem itemValue="1" itemLabel="2011" />
+							<f:selectItem itemValue="2" itemLabel="2012" /> </h:selectOneListbox>
+									</td>
+									<td ><h:outputText value="#{msg.tipo_producto}" /></td>
+									<td colspan="2" >
+									<h:selectOneListbox size="1" value="#{archivosBDBM.objProyecto.idmodalidad}">
+							<f:selectItem itemValue="1" itemLabel="Libro" />
+							<f:selectItem itemValue="2" itemLabel="Biblias" />
+							<f:selectItem itemValue="3" itemLabel="Otros" />
+							 </h:selectOneListbox>
+									</td>
 								</tr>
 								
 								<tr>
-									<td><h:outputText value="#{msg.nombre_producto}" /></td>
+									<td><h:outputText value="#{msg.nombre_producto}"  /></td>
 									<td><p:inputText id="x" value="#{login.usuario}" maxlength="15" /></td>
 								</tr>
 								
 								<tr>
 									<td><h:outputText value="#{msg.detalle_producto}" /></td>
-									<td><p:inputTextarea id="y" value="#{login.usuario}" maxlength="15" rows="3" /> 
+									<td colspan="1"><p:inputTextarea id="y" value="#{login.usuario}" maxlength="15" rows="8" cols="50" /> 
+									</td>
+									
+									<td><h:outputText value="#{msg.imagen_producto}" /></td>
+									<td colspan="1"><p:inputText id="z" maxlength="15" />
 									</td>
 								</tr>
 								
-								
-								
-								
 								<tr>
-									<td colspan="2">
+									<td colspan="10">
 										<div align="center">
 											<p:commandButton value="#{msg.boton_grabar}"
 												action="#{login.login}" ajax="false" />
