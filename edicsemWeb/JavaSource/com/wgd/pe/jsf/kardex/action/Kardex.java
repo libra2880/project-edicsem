@@ -15,4 +15,8 @@ public class Kardex {
 		return "/mantenimientoProducto";
 	}
 	
+	public String registroOrdenReposicion(){
+		return "/registroOrdenReposicion";
+	}
+	
 }
