@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+	<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	template="/template/template.xhtml">
+	
+	<h:head>
+		<meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
+			<title>Registro de Contrato</title>
+		<link type="text/css" rel="stylesheet" href="themes/aristo/skin1.css" />
+		<style type="text/css">
+.ui-layout-top {
+	z-index: 20 !important;
+	overflow: visible !important;;
+}
+
+.ui-layout-top .ui-layout-unit-content {
+	overflow: visible !important;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	font-size: 0.8em;
+	color: #000000;
+}
+</style>
+	</h:head>
+
+<ui:define name="body">
+	<f:loadBundle var="msg"
+		basename="com.wgd.pe.jsf.resources.message" />
+
+
+	<h:form>
+
+		<div align="center" style="margin-bottom: 60px">
+
+			<table border="0" width="100%">
+				<tr style="height: 220px">
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<td></td>
+					<!-- LOGIN -->
+					<td align="center"><p:panel header="#{msg.mantenimiento_producto_titulo}"
+							style="width:80%">
+							<table width="100%"  >
+								
+								<tr>
+									<td ><h:outputText value="#{msg.codigo_producto}" /></td>
+									<td ><p:inputText id="codigoProducto" value="#{login.usuario}" maxlength="15" /></td>
+									<td ><h:outputText value="#{msg.fabricante_editorial}" /></td>
+									<td colspan="2"><h:selectOneListbox size="1" value="#{archivosBDBM.objProyecto.idmodalidad}">
+							<f:selectItem itemValue="1" itemLabel="-- Seleccione --" />
+							<f:selectItem itemValue="2" itemLabel="Sembrano" />
+						</h:selectOneListbox></td>
+									
+									<td ><h:outputText value="#{msg.anio}" /></td>
+									<td colspan="2" >
+									<h:selectOneListbox size="1" value="#{archivosBDBM.objProyecto.idmodalidad}">
+							<f:selectItem itemValue="1" itemLabel="2011" />
+							<f:selectItem itemValue="2" itemLabel="2012" /> </h:selectOneListbox>
+									</td>
+									<td ><h:outputText value="#{msg.tipo_producto}" /></td>
+									<td colspan="2" >
+									<h:selectOneListbox size="1" value="#{archivosBDBM.objProyecto.idmodalidad}">
+							<f:selectItem itemValue="1" itemLabel="Libro" />
+							<f:selectItem itemValue="2" itemLabel="Biblias" />
+							<f:selectItem itemValue="3" itemLabel="Otros" />
+							 </h:selectOneListbox>
+									</td>
+								</tr>
+								
+								<tr>
+									<td><h:outputText value="#{msg.nombre_producto}"  /></td>
+									<td><p:inputText id="x" value="#{login.usuario}" maxlength="15" /></td>
+								</tr>
+								
+								<tr>
+									<td><h:outputText value="#{msg.detalle_producto}" /></td>
+									<td colspan="1"><p:inputTextarea id="y" value="#{login.usuario}" maxlength="15" rows="8" cols="50" /> 
+									</td>
+									
+									<td><h:outputText value="#{msg.imagen_producto}" /></td>
+									<td colspan="1"><p:inputText id="z" maxlength="15" />
+									</td>
+								</tr>
+								
+								<tr>
+									<td colspan="10">
+										<div align="center">
+											<p:commandButton value="#{msg.boton_grabar}"
+												action="#{login.login}" ajax="false" />
+											<p:commandButton value="#{msg.boton_limpiar}"
+												action="#{login.login}" ajax="false" />
+										
+										</div>
+									</td>
+								</tr>
+								
+								</table>
+						</p:panel></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+
+			</table>
+			<p:growl life="6000" showDetail="true" showSummary="true" />
+
+		</div>
+	</h:form>
+</ui:define>
+</ui:composition>
