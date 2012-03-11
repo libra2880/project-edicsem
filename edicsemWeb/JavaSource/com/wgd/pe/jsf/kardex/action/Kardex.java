@@ -8,7 +8,7 @@ import javax.faces.bean.SessionScoped;
 public class Kardex {
      
 	public Kardex() {
-		// TODO Auto-generated constructor stub
+
 	}
 	
 	public String registroProducto(){
