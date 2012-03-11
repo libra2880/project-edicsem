@@ -10,7 +10,7 @@
 	<h:head>
 		<meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
 			<title>Registro Orden de Reposicion</title>
-		<link type="text/css" rel="stylesheet" href="themes/aristo/skin1.css" />
+		<link type="text/css" rel="stylesheet" href="themes/aristo/skin.css" />
 		<style type="text/css">
 .ui-layout-top {
 	z-index: 20 !important;
@@ -48,47 +48,48 @@ body {
 				<tr>
 					<td></td>
 					<!-- LOGIN -->
-					<td align="center"><p:panel header="#{msg.mantenimiento_producto_titulo}"
+					<td align="center"><p:panel header="#{msg.orden_reposicion_titulo}"
 							style="width:80%">
 							<table width="100%"  >
 								
 								<tr>
-									<td ><h:outputText value="#{msg.codigo_producto}" /></td>
-									<td ><p:inputText id="codigoProducto" value="#{login.usuario}" maxlength="15" /></td>
-									<td ><h:outputText value="#{msg.fabricante_editorial}" /></td>
+									<td ><h:outputText value="#{msg.punto_venta_orden_reposicion}" /></td>
 									<td colspan="2"><h:selectOneListbox size="1" value="#{archivosBDBM.objProyecto.idmodalidad}">
-							<f:selectItem itemValue="1" itemLabel="-- Seleccione --" />
-							<f:selectItem itemValue="2" itemLabel="Sembrano" />
-						</h:selectOneListbox></td>
-									
-									<td ><h:outputText value="#{msg.anio}" /></td>
-									<td colspan="2" >
-									<h:selectOneListbox size="1" value="#{archivosBDBM.objProyecto.idmodalidad}">
-							<f:selectItem itemValue="1" itemLabel="2011" />
-							<f:selectItem itemValue="2" itemLabel="2012" /> </h:selectOneListbox>
-									</td>
-									<td ><h:outputText value="#{msg.tipo_producto}" /></td>
-									<td colspan="2" >
-									<h:selectOneListbox size="1" value="#{archivosBDBM.objProyecto.idmodalidad}">
-							<f:selectItem itemValue="1" itemLabel="Libro" />
-							<f:selectItem itemValue="2" itemLabel="Biblias" />
-							<f:selectItem itemValue="3" itemLabel="Otros" />
-							 </h:selectOneListbox>
-									</td>
+										<f:selectItem itemValue="-1" itemLabel="-- Seleccione --" />
+										<f:selectItem itemValue="1" itemLabel="Megaplaza" />
+										<f:selectItem itemValue="2" itemLabel="Plaza Lima Norte" />
+										<f:selectItem itemValue="3" itemLabel="San Miguel" />
+									</h:selectOneListbox></td>
+									<td ><h:outputText value="#{msg.fecha_entrega_orden_reposicion}" /></td>
+									<td><p:inputText id="fechaEntrega" value="#{login.usuario}" maxlength="15" /></td>
 								</tr>
 								
 								<tr>
-									<td><h:outputText value="#{msg.nombre_producto}"  /></td>
-									<td><p:inputText id="x" value="#{login.usuario}" maxlength="15" /></td>
+									<td><h:outputText value="#{msg.cantidad_orden_reposicion}"  /></td>
+									<td><p:inputText id="cantidadOrdenReposicion" maxlength="10" /></td>
+									
+									<td><h:outputText value="#{msg.tipo_producto}"  /></td>
+									<td colspan="2" >
+									<h:selectOneListbox size="1" value="#{archivosBDBM.objProyecto.idmodalidad}">
+									<f:selectItem itemValue="-1" itemLabel="-- Seleccione --" />
+									<f:selectItem itemValue="1" itemLabel="Libro" />
+									<f:selectItem itemValue="2" itemLabel="Biblias" />
+									<f:selectItem itemValue="3" itemLabel="Otros" />
+									 </h:selectOneListbox>
+									</td>
+									
+									<td><h:outputText value="#{msg.producto_orden_reposicion}"  /></td>
+									<td colspan="2" >
+									<h:selectOneListbox size="1" value="#{archivosBDBM.objProyecto.idmodalidad}">
+									<f:selectItem itemValue="-1" itemLabel="-- Seleccione --" />
+									<f:selectItem itemValue="1" itemLabel="Paquete Biblico" />
+									 </h:selectOneListbox>
+									</td>	
 								</tr>
 								
 								<tr>
-									<td><h:outputText value="#{msg.detalle_producto}" /></td>
-									<td colspan="1"><p:inputTextarea id="y" value="#{login.usuario}" maxlength="15" rows="8" cols="50" /> 
-									</td>
-									
-									<td><h:outputText value="#{msg.imagen_producto}" /></td>
-									<td colspan="1"><p:inputText id="z" maxlength="15" />
+									<td><h:outputText value="#{msg.unidad_orden_reposicion}" /></td>
+									<td colspan="1"><p:inputText id="UnidadOrdenReposicion" maxlength="5" />
 									</td>
 								</tr>
 								
