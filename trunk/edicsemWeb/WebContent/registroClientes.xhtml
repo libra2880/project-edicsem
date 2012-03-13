@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" 
+	template="/template/template.xhtml">
+
+	<h:head>
+		<meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
+		<title>Mantenimiento de Productos</title>
+		<link type="text/css" rel="stylesheet" href="themes/aristo/skin1.css" />
+		<style type="text/css">
+.ui-layout-top {
+	z-index: 20 !important;
+	overflow: visible !important;;
+}
+
+.ui-layout-top .ui-layout-unit-content {
+	overflow: visible !important;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	font-size: 0.8em;
+	color: #000000;
+}
+</style>
+	</h:head>
+
+	<ui:define name="body">
+		<f:loadBundle var="msg" basename="com.wgd.pe.jsf.resources.message" />
+		<h:form>
+			<div align="center">
+				<h:outputText value="#{msg.titulo_registro_cliente}" />
+			</div>
+			<p:panel header="#{msg.panel_tituto_registro_clientes_uno}">
+			<table width="100%">
+			<tr>
+				<td><h:outputText value="#{msg.registro_nombre}" /></td>
+				<td><p:inputText size="35"/> </td>
+				
+				<td><h:outputText value="#{msg.registro_apellidoP}" /></td>
+				<td><p:inputText size="35"/> </td>
+				
+				<td><h:outputText value="#{msg.registro_apellidoM}" /></td>
+				<td><p:inputText size="35"/> </td>
+			</tr>
+			
+			<tr>
+				<td><h:outputText value="#{msg.registro_DNI}"/> </td>
+				<td><p:inputText size="35"/> </td>
+				
+				<td><h:outputText value="#{msg.registro_NumeroContrato}" /> </td>
+				<td><p:inputText size="35"/> </td>
+				
+				<td><h:outputText value="#{msg.registro_condicion}" /> </td>
+				<h:selectManyListbox size="1">
+					<f:selectItem itemLabel="Puntual" itemValue="1"/>
+					<f:selectItem itemLabel="Regular" itemValue="2"/>
+					<f:selectItem itemLabel="Moroso" itemValue="3"/>
+					<f:selectItem itemLabel="Extremo" itemValue="4"/>
+				</h:selectManyListbox>
+			</tr>
+			<tr>
+				<td><h:outputText value="#{msg.registro_telefono_Cel}" /> </td>
+				<td><p:inputText size="20"/> </td>
+				
+				<td><h:outputText value="#{msg.registro_telefono_fijo}" /> </td>
+				<td><p:inputText size="20"/> </td>
+				
+				<td><h:outputText value="#{msg.registro_inubicable}" /> </td>
+        		<td> <p:selectBooleanCheckbox /></td>  
+			</tr>
+			</table>
+			
+			</p:panel>
+			
+			<p:growl life="6000" showDetail="true" showSummary="true" />
+
+
+		</h:form>
+	</ui:define>
+</ui:composition>

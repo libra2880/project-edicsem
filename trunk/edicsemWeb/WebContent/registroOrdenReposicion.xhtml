@@ -1,15 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-	<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:p="http://primefaces.prime.com.tr/ui"
-	template="/template/template.xhtml">
-	
+	xmlns:p="http://primefaces.org/ui" template="/template/template.xhtml">
+
 	<h:head>
 		<meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
-			<title>Registro Orden de Reposicion</title>
+		<title>Registro Orden de Reposicion</title>
 		<link type="text/css" rel="stylesheet" href="themes/aristo/skin.css" />
 		<style type="text/css">
 .ui-layout-top {
@@ -29,97 +27,88 @@ body {
 </style>
 	</h:head>
 
-<ui:define name="body">
-	<f:loadBundle var="msg"
-		basename="com.wgd.pe.jsf.resources.message" />
+	<ui:define name="body">
+		<f:loadBundle var="msg" basename="com.wgd.pe.jsf.resources.message" />
 
 
-	<h:form>
+		<h:form>
 
-		<div align="center" style="margin-bottom: 60px">
+			<div align="center">
 
-			<table border="0" width="100%">
-				<tr style="height: 220px">
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
+				<table border="0" width="100%">
+					<tr>
+						<td></td>
+						<!-- LOGIN -->
+						<td align="center"><p:panel
+								header="#{msg.orden_reposicion_titulo}">
+								<table width="100%">
 
-				<tr>
-					<td></td>
-					<!-- LOGIN -->
-					<td align="center"><p:panel header="#{msg.orden_reposicion_titulo}"
-							style="width:80%">
-							<table width="100%"  >
-								
-								<tr>
-									<td ><h:outputText value="#{msg.punto_venta_orden_reposicion}" /></td>
-									<td colspan="2"><h:selectOneListbox size="1" value="#{archivosBDBM.objProyecto.idmodalidad}">
-										<f:selectItem itemValue="-1" itemLabel="-- Seleccione --" />
-										<f:selectItem itemValue="1" itemLabel="Megaplaza" />
-										<f:selectItem itemValue="2" itemLabel="Plaza Lima Norte" />
-										<f:selectItem itemValue="3" itemLabel="San Miguel" />
-									</h:selectOneListbox></td>
-									<td ><h:outputText value="#{msg.fecha_entrega_orden_reposicion}" /></td>
-									<td><p:inputText id="fechaEntrega" value="#{login.usuario}" maxlength="15" /></td>
-								</tr>
-								
-								<tr>
-									<td><h:outputText value="#{msg.cantidad_orden_reposicion}"  /></td>
-									<td><p:inputText id="cantidadOrdenReposicion" maxlength="10" /></td>
-									
-									<td><h:outputText value="#{msg.tipo_producto}"  /></td>
-									<td colspan="2" >
-									<h:selectOneListbox size="1" value="#{archivosBDBM.objProyecto.idmodalidad}">
-									<f:selectItem itemValue="-1" itemLabel="-- Seleccione --" />
-									<f:selectItem itemValue="1" itemLabel="Libro" />
-									<f:selectItem itemValue="2" itemLabel="Biblias" />
-									<f:selectItem itemValue="3" itemLabel="Otros" />
-									 </h:selectOneListbox>
-									</td>
-									
-									<td><h:outputText value="#{msg.producto_orden_reposicion}"  /></td>
-									<td colspan="2" >
-									<h:selectOneListbox size="1" value="#{archivosBDBM.objProyecto.idmodalidad}">
-									<f:selectItem itemValue="-1" itemLabel="-- Seleccione --" />
-									<f:selectItem itemValue="1" itemLabel="Paquete Biblico" />
-									 </h:selectOneListbox>
-									</td>	
-								</tr>
-								
-								<tr>
-									<td><h:outputText value="#{msg.unidad_orden_reposicion}" /></td>
-									<td colspan="1"><p:inputText id="UnidadOrdenReposicion" maxlength="5" />
-									</td>
-								</tr>
-								
-								<tr>
-									<td colspan="10">
-										<div align="center">
-											<p:commandButton value="#{msg.boton_grabar}"
-												action="#{login.login}" ajax="false" />
-											<p:commandButton value="#{msg.boton_limpiar}"
-												action="#{login.login}" ajax="false" />
-										
-										</div>
-									</td>
-								</tr>
-								
+									<tr>
+										<td><h:outputText
+												value="#{msg.punto_venta_orden_reposicion}" /></td>
+										<td colspan="2"><h:selectOneListbox size="1"
+												value="#{archivosBDBM.objProyecto.idmodalidad}">
+												<f:selectItem itemValue="-1" itemLabel="-- Seleccione --" />
+												<f:selectItem itemValue="1" itemLabel="Megaplaza" />
+												<f:selectItem itemValue="2" itemLabel="Plaza Lima Norte" />
+												<f:selectItem itemValue="3" itemLabel="San Miguel" />
+											</h:selectOneListbox></td>
+										<td><h:outputText
+												value="#{msg.fecha_entrega_orden_reposicion}" /></td>
+										<td><p:inputText id="fechaEntrega"
+												value="#{login.usuario}" maxlength="15" /></td>
+									</tr>
+
+									<tr>
+										<td><h:outputText
+												value="#{msg.cantidad_orden_reposicion}" /></td>
+										<td><p:inputText id="cantidadOrdenReposicion"
+												maxlength="10" /></td>
+
+										<td><h:outputText value="#{msg.tipo_producto}" /></td>
+										<td colspan="2"><h:selectOneListbox size="1"
+												value="#{archivosBDBM.objProyecto.idmodalidad}">
+												<f:selectItem itemValue="-1" itemLabel="-- Seleccione --" />
+												<f:selectItem itemValue="1" itemLabel="Libro" />
+												<f:selectItem itemValue="2" itemLabel="Biblias" />
+												<f:selectItem itemValue="3" itemLabel="Otros" />
+											</h:selectOneListbox></td>
+
+										<td><h:outputText
+												value="#{msg.producto_orden_reposicion}" /></td>
+										<td colspan="2"><h:selectOneListbox size="1"
+												value="#{archivosBDBM.objProyecto.idmodalidad}">
+												<f:selectItem itemValue="-1" itemLabel="-- Seleccione --" />
+												<f:selectItem itemValue="1" itemLabel="Paquete Biblico" />
+											</h:selectOneListbox></td>
+									</tr>
+
+									<tr>
+										<td><h:outputText value="#{msg.unidad_orden_reposicion}" /></td>
+										<td colspan="1"><p:inputText id="UnidadOrdenReposicion"
+												maxlength="5" /></td>
+									</tr>
+
+									<tr>
+										<td colspan="10">
+											<div align="center">
+												<p:commandButton value="#{msg.boton_grabar}"
+													action="#{login.login}" ajax="false" />
+												<p:commandButton value="#{msg.boton_limpiar}"
+													action="#{login.login}" ajax="false" />
+
+											</div>
+										</td>
+									</tr>
+
 								</table>
-						</p:panel></td>
-					<td></td>
-				</tr>
+							</p:panel></td>
+						<td></td>
+					</tr>
+				</table>
+				<p:growl life="6000" showDetail="true" showSummary="true" />
 
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-
-			</table>
-			<p:growl life="6000" showDetail="true" showSummary="true" />
-
-		</div>
-	</h:form>
-</ui:define>
+			</div>
+		</h:form>
+	</ui:define>
 </ui:composition>
