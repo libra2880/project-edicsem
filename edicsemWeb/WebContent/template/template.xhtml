@@ -11,7 +11,7 @@
 		<ui:insert name="title">
 			<title>Men&uacute; Principal</title>
 		</ui:insert>
-		<link type="text/css" rel="stylesheet" href="themes/aristo/skin.css" />
+		<link type="text/css" rel="stylesheet" href="themes/own/own.css" />
 		<style type="text/css">
 .ui-layout-top {
 	z-index: 20 !important;
@@ -27,17 +27,13 @@ body {
 	font-size: 0.8em;
 	color: #000000;
 }
-
-.ui-widget {
-	font-size: 75%;
-}
 </style>
 	</h:head>
 
 
 	<p:layout fullPage="true">
 
-		<p:layoutUnit position="top" height="105" 
+		<p:layoutUnit position="north" height="105" 
 			styleClass="title ui-widget-header">
 
 			<h:panelGrid columns="10" width="100%">
@@ -57,7 +53,7 @@ body {
 					<p:spacer />
 
 					<font face="Calibri" style="font-size: 2.8em; font-weight: bold;">
-						Sistema EDICIONES SEMBRANDO SAC </font>
+						Sistema XXXXXXX </font>
 					<p:spacer />
 				</div>
 
@@ -79,8 +75,7 @@ body {
 			</h:panelGrid>
 		</p:layoutUnit>
 
-		<p:layoutUnit position="left" width="250" resizable="true"
-			collapsible="true" header="Options" minSize="180">
+		<p:layoutUnit position="west" width="250" resizable="true"  header="Options" minSize="180">
 			<h:form>
 						<p:menu style="width:100%" >
 							<p:submenu label="Opciones del sistema" >
@@ -91,14 +86,10 @@ body {
 								<p:menuitem value="Visor de Datos" ajax="false" />
 								<p:menuitem value="Operadoras" ajax="false"/>
 							</p:submenu>
-							<p:submenu label="Respecto al Usuario">
-								<p:menuitem value="Generar Reporte" update="messages" ajax="false" action="registroContrato.jsf"/>
-							</p:submenu>
-					
 							<p:submenu label="Mantenimientos">
 								<p:menuitem value="Productos" update="messages" ajax="false" action="#{kardex.registroProducto}" />
 								<p:menuitem value="Orden de Reposicion" update="messages" ajax="false" action="#{kardex.registroOrdenReposicion}" />
-							
+								<p:menuitem value="Registro de Contrato" update="messages" ajax="false" action="registroClientes.jsf" />
 							</p:submenu>
 					
 						</p:menu>
@@ -271,4 +262,5 @@ body {
 			</table>
 		</h:form>
 	</p:dialog>
+	<p:growl life="6000" showDetail="true" showSummary="true" />
 </f:view>
