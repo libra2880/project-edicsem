@@ -51,9 +51,9 @@
 							<td colspan="1"><p:inputTextarea id="y"
 									value="#{login.usuario}" maxlength="15" rows="8" cols="50" />
 							</td>
-
-							<td><h:outputText value="#{msg.imagen_producto}" /></td>
-							<td colspan="1"><p:inputText id="z" maxlength="15" /></td>
+                
+							<td><p:fileUpload value="#{msg.imagen_producto}" mode="simple"/> </td>
+							<td colspan="1"><p:commandButton value="Submit" ajax="false"/></td>
 						</tr>
 						<tr>
 						
