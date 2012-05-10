@@ -43,7 +43,7 @@ public class Login {
 	public String login(){
 		String resultado="";
 		try {
-			
+			// CUARTO DE DIEGO 6506432
 			if (objFacadeSeguridad.login(usuario, contrasenia)==1) {
 				resultado="result";
 			}else {
@@ -51,7 +51,6 @@ public class Login {
 				FacesContext.getCurrentInstance().addMessage
 				(null, new FacesMessage( FacesMessage.SEVERITY_WARN,"Mensaje de error" 
 						,"El usuario insertado es incorrecto. Por favor ingrese nuevamente el usuario."));
-
 			}
 			
 		} catch (Exception e) {

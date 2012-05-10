@@ -6,7 +6,7 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.jboss.ide.eclipse.as.core.server.runtime.runtimeTarget/JBoss 6.x Runtime">
 		<attributes>
-			<attribute name="owner.project.facets" value="jst.jsf;jst.web"/>
+			<attribute name="owner.project.facets" value="jst.web"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre6">
@@ -15,5 +15,11 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="/edicsemFacade"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/jsf">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+			<attribute name="owner.project.facets" value="jst.jsf"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="WebContent/WEB-INF/classes"/>
 </classpath>

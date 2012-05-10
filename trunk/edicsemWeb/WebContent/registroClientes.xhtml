@@ -5,34 +5,11 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui" template="/template/template.xhtml">
 
-	<h:head>
-		<meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
-		<title>Mantenimiento de Productos</title>
-		<link type="text/css" rel="stylesheet" href="themes/own/own.css" />
-		<style type="text/css">
-.ui-layout-top {
-	z-index: 20 !important;
-	overflow: visible !important;;
-}
-
-.ui-layout-top .ui-layout-unit-content {
-	overflow: visible !important;
-}
-
-body {
-	font-family: Arial, sans-serif;
-	font-size: 0.8em;
-	color: #000000;
-}
-</style>
-	</h:head>
 
 	<ui:define name="body">
+	<h1 class="title ui-widget-header ui-corner-all" ><h:outputText value="#{msg.titulo_registro_cliente}"/></h1>
 		<f:loadBundle var="msg" basename="com.wgd.pe.jsf.resources.message" />
 		<h:form>
-			<div align="center">
-				<h:outputText value="#{msg.titulo_registro_cliente}" />
-			</div>
 			<p:panel header="#{msg.panel_tituto_registro_clientes_uno}">
 				<table width="100%">
 					<tr>
@@ -70,7 +47,7 @@ body {
 						<td><p:inputText size="20" /></td>
 
 						<td><h:outputText value="#{msg.registro_inubicable}" /></td>
-						<td><h:selectBooleanCheckbox value="registroInubicable" /></td>
+						<td><p:selectBooleanCheckbox  /></td>
 					</tr>
 				</table>
 				<div align="center">
@@ -86,6 +63,7 @@ body {
 							style="border:0" />
 					</p:commandLink>
 				</div>
+				<p:spacer width="40" />
 				<div align="center" style="width: 100%">
 					<p:dataTable emptyMessage="No se encuentran datos disponibles">
 						<p:column headerText="N° de Contrato">
@@ -134,22 +112,28 @@ body {
 
 						<td align="right"><h:outputText value="Apellido Paterno: " />
 						</td>
-						<td colspan="2"><p:inputText id="apaterno" size="30" /></td>
+						<td><p:inputText id="apaterno" size="30" /></td>
 
 						<td align="right"><h:outputText value="Apellido Materno: " />
 						</td>
-						<td colspan="2"><p:inputText id="amaterno" size="30" /></td>
+						<td><p:inputText id="amaterno" size="30" /></td>
 					</tr>
 
 					<tr>
 						<td align="right"><h:outputText value="DNI: " /></td>
 						<td><p:inputText id="dni" size="15" maxlength="8" /></td>
+						<td align="right"><h:outputText value="Domicilio: " /></td>
+						<td><p:inputText id="domicilio" size="35" /></td>
+						<td align="right"><h:outputText value="Casa: " /></td>
+						<td><h:selectOneListbox id="casa" size="1">
+								<f:selectItem itemLabel="Propia" itemValue="1" />
+								<f:selectItem itemLabel="Alquilada" itemValue="2" />
+								<f:selectItem itemLabel="Suegros" itemValue="3" />
+								<f:selectItem itemLabel="Otros" itemValue="4" />
+							</h:selectOneListbox></td>
 					</tr>
 
 					<tr>
-						<td align="right"><h:outputText value="Domicilio: " /></td>
-						<td><p:inputText id="domicilio" size="35" /></td>
-
 						<td align="right"><h:outputText value="Departamento: " /></td>
 						<td><h:selectOneListbox id="dept" size="1">
 								<f:selectItem itemLabel="Lima" itemValue="1" />
@@ -170,61 +154,63 @@ body {
 								<f:selectItem itemLabel="San Isidro" itemValue="1" />
 								<f:selectItem itemLabel="Villa Maria del Triunfo" itemValue="1" />
 							</h:selectOneListbox></td>
+							
 					</tr>
 					<tr>
 						<td align="right"><h:outputText value="Referencia: " /></td>
 						<td><p:inputText id="referencia" size="35" /></td>
 
-						<td align="right"><h:outputText value="Casa: " /></td>
-						<td><h:selectOneListbox id="casa" size="1">
-								<f:selectItem itemLabel="Propia" itemValue="1" />
-								<f:selectItem itemLabel="Alquilada" itemValue="2" />
-								<f:selectItem itemLabel="Suegros" itemValue="3" />
-								<f:selectItem itemLabel="Otros" itemValue="4" />
-							</h:selectOneListbox></td>
-						<td align="right"><h:outputText value="Telf. Fijo: " /> </td>
-						<td><p:inputText maxlength="7" /> </td>
 						
-						<td align="right"><h:outputText value="Titular de la Línea: " /> </td>
-						<td><p:inputText size="35" /> </td>
+						<td align="right"><h:outputText value="Telf. Fijo: " /></td>
+						<td><p:inputText maxlength="7" /></td>
+
+						<td align="right"><h:outputText value="Titular de la Línea: " />
+						</td>
+						<td><p:inputText size="35" /></td>
 					</tr>
-					
+
 					<tr>
-						<td align="right"><h:outputText value="Celular: " /> </td>
-						<td><p:inputText size="15" maxlength="9"/> </td>
+						<td align="right"><h:outputText value="Celular: " /></td>
+						<td><p:inputText size="15" maxlength="9" /></td>
 						<td></td>
 						<td></td>
-						<td align="right"><h:outputText value="Telf. referencia: " /> </td>
-						<td><p:inputText size="15" maxlength="9"/> </td>
+						<td align="right"><h:outputText value="Telf. referencia: " />
+						</td>
+						<td><p:inputText size="15" maxlength="9" /></td>
 					</tr>
-					
+
 					<tr>
-						<td align="right"><h:outputText value="Fecha de Nacimiento: " /> </td>
+						<td align="right"><h:outputText value="Fecha de Nacimiento: " />
+						</td>
 						<td><p:calendar /></td>
-						<td align="right"><h:outputText value="E-mail" /> </td>
-						<td><p:inputText size="30"/> </td>
+						<td align="right"><h:outputText value="E-mail" /></td>
+						<td><p:inputText size="30" /></td>
 					</tr>
 					<tr>
-					<td align="right"><h:outputText value="Dirección de Trabajo: " /> </td>
-					<td><p:inputText size="35"/> </td>
-					<td align="right"><h:outputText value="Distrito de Trabajo: " /> </td>
-					<td><h:selectOneListbox id="distTrabajo" size="1">
+						<td align="right"><h:outputText
+								value="Dirección de Trabajo: " /></td>
+						<td><p:inputText size="35" /></td>
+						<td align="right"><h:outputText value="Distrito de Trabajo: " />
+						</td>
+						<td><h:selectOneListbox id="distTrabajo" size="1">
 								<f:selectItem itemLabel="San Martin de Porres" itemValue="1" />
 								<f:selectItem itemLabel="San Isidro" itemValue="1" />
 								<f:selectItem itemLabel="Villa Maria del Triunfo" itemValue="1" />
 							</h:selectOneListbox></td>
 					</tr>
 					<tr>
-					<td align="right"><h:outputText value="Telf. Trabajo: " /> </td>
-					<td><p:inputText size="30"/> </td>
+						<td align="right"><h:outputText value="Telf. Trabajo: " /></td>
+						<td><p:inputText size="30" /></td>
 					</tr>
 					<tr>
-					<td align="right"><h:outputText value="Consulta de Reniec: " /></td>
-					<td><h:selectBooleanCheckbox value="Consulta de reniec" /> </td>
-					<td align="right"><h:outputText value="Fecha de Consulta: " /> </td>
+						<td align="right"><h:outputText value="Consulta de Reniec: " /></td>
+						<td><p:selectBooleanCheckbox  /></td>
+						<td align="right"><h:outputText value="Fecha de Consulta: " />
+						</td>
 						<td><p:calendar /></td>
 					</tr>
-				</table><br/>
+				</table>
+				<br />
 				<div align="center">
 					<p:commandLink title="guardar cliente">
 						<h:graphicImage value="/images/wgd/guardar-cliente.png" />

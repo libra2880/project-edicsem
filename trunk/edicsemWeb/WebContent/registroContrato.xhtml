@@ -3,101 +3,126 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:p="http://primefaces.org/ui"
-	template="/template/template.xhtml">
-
-	<h:head>
-		<meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
-		<title>Registro de Contrato</title>
-		<link type="text/css" rel="stylesheet" href="themes/own/own.css" />
-		<style type="text/css">
-.ui-layout-top {
-	z-index: 20 !important;
-	overflow: visible !important;;
-}
-
-.ui-layout-top .ui-layout-unit-content {
-	overflow: visible !important;
-}
-
-body {
-	font-family: Arial, sans-serif;
-	font-size: 0.8em;
-	color: #000000;
-}
-</style>
-	</h:head>
+	xmlns:p="http://primefaces.org/ui" template="/template/template.xhtml">
 
 	<ui:define name="body">
-		<f:loadBundle var="msg" basename="com.wgd.pe.jsf.resources.message" />
-
-
 		<h:form>
+			<f:loadBundle var="msg" basename="com.wgd.pe.jsf.resources.message" />
+			<h1 class="title ui-widget-header ui-corner-all">
+				<h:outputText value="#{msg.titulo_registro_contrato}" />
+			</h1>
 
-			<div align="center" >
-<p:panel
-								header="#{msg.mantenimiento_producto_titulo}" style="width:80%">
-								<table width="100%">
+			<p:panel header="#{msg.panel_titulo_registro_contrato}">
+				<table width="100%">
+					<tr>
+						<td align="right"><h:outputText
+								value="#{msg.registro_nombre}" /></td>
+						<td><p:inputText /></td>
+						<td align="right"><h:outputText
+								value="#{msg.registro_apellidoP}" /></td>
+						<td><p:inputText size="25" /></td>
+						<td align="right"><h:outputText
+								value="#{msg.registro_apellidoM}" /></td>
+						<td><p:inputText size="25" /></td>
+					</tr>
 
-									<tr>
-										<td><h:outputText value="#{msg.codigo_producto}" /></td>
-										<td><p:inputText id="codigoProducto"
-												value="#{login.usuario}" maxlength="15" /></td>
-										<td><h:outputText value="#{msg.fabricante_editorial}" /></td>
-										<td colspan="2"><h:selectOneListbox size="1"
-												value="#{archivosBDBM.objProyecto.idmodalidad}">
-												<f:selectItem itemValue="1" itemLabel="-- Seleccione --" />
-												<f:selectItem itemValue="2" itemLabel="Sembrano" />
-											</h:selectOneListbox></td>
-
-										<td><h:outputText value="#{msg.anio}" /></td>
-										<td colspan="2"><h:selectOneListbox size="1"
-												value="#{archivosBDBM.objProyecto.idmodalidad}">
-												<f:selectItem itemValue="1" itemLabel="2011" />
-												<f:selectItem itemValue="2" itemLabel="2012" />
-											</h:selectOneListbox></td>
-										<td><h:outputText value="#{msg.tipo_producto}" /></td>
-										<td colspan="2"><h:selectOneListbox size="1"
-												value="#{archivosBDBM.objProyecto.idmodalidad}">
-												<f:selectItem itemValue="1" itemLabel="Libro" />
-												<f:selectItem itemValue="2" itemLabel="Biblias" />
-												<f:selectItem itemValue="3" itemLabel="Otros" />
-											</h:selectOneListbox></td>
-									</tr>
-
-									<tr>
-										<td><h:outputText value="#{msg.nombre_producto}" /></td>
-										<td><p:inputText id="x" value="#{login.usuario}"
-												maxlength="15" /></td>
-									</tr>
-
-									<tr>
-										<td><h:outputText value="#{msg.detalle_producto}" /></td>
-										<td colspan="1"><p:inputTextarea id="y"
-												value="#{login.usuario}" maxlength="15" rows="8" cols="50" />
-										</td>
-
-										<td><h:outputText value="#{msg.imagen_producto}" /></td>
-										<td colspan="1"><p:inputText id="z" maxlength="15" /></td>
-									</tr>
-
-									<tr>
-										<td colspan="10">
-											<div align="center">
-												<p:commandButton value="#{msg.boton_grabar}"
-													action="#{login.login}" ajax="false" />
-												<p:commandButton value="#{msg.boton_limpiar}"
-													action="#{login.login}" ajax="false" />
-
-											</div>
-										</td>
-									</tr>
-
-								</table>
-							</p:panel>
-				
-
-			</div>
+					<tr>
+						<td align="right"><h:outputText value="#{msg.registro_DNI}" /></td>
+						<td><p:inputText /></td>
+						<td align="right"><h:outputText
+								value="#{msg.registro_empresa}" /></td>
+						<td><h:selectOneListbox id="basic" size="1">
+								<f:selectItem itemLabel="EDICSEM" itemValue="1" />
+								<f:selectItem itemLabel="MOBIMA" itemValue="2" />
+								<f:selectItem itemLabel="PROBICA" itemValue="3" />
+							</h:selectOneListbox></td>
+					</tr>
+					<tr>
+						<td align="right"><h:outputText
+								value="#{msg.registro_direccion}" /></td>
+						<td><p:inputText /></td>
+						<td align="right"><h:outputText
+								value="#{msg.registro_departamento}" /></td>
+						<td><h:selectOneListbox id="dept" size="1">
+								<f:selectItem itemLabel="Lima" itemValue="1" />
+								<f:selectItem itemLabel="Arequipa" itemValue="1" />
+								<f:selectItem itemLabel="Piura" itemValue="1" />
+							</h:selectOneListbox></td>
+						<td align="right"><h:outputText
+								value="#{msg.registro_provincia}" /></td>
+						<td><h:selectOneListbox id="prov" size="1">
+								<f:selectItem itemLabel="Lima" itemValue="1" />
+								<f:selectItem itemLabel="Chincha" itemValue="1" />
+								<f:selectItem itemLabel="Chaclacayo" itemValue="1" />
+							</h:selectOneListbox></td>
+						<td align="right"><h:outputText
+								value="#{msg.registro_distrito}" /></td>
+						<td><h:selectOneListbox id="dist" size="1">
+								<f:selectItem itemLabel="San Martin de Porres" itemValue="1" />
+								<f:selectItem itemLabel="San Isidro" itemValue="1" />
+								<f:selectItem itemLabel="Villa Maria del Triunfo" itemValue="1" />
+							</h:selectOneListbox></td>
+					</tr>
+					<tr>
+						<td align="right"><h:outputText
+								value="#{msg.registro_referencia}" /></td>
+						<td><p:inputText /></td>
+						<td align="right"><h:outputText value="#{msg.registro_casa} " /></td>
+						<td><h:selectOneListbox id="casa" size="1">
+								<f:selectItem itemLabel="Propia" itemValue="1" />
+								<f:selectItem itemLabel="Alquilada" itemValue="2" />
+								<f:selectItem itemLabel="Suegros" itemValue="3" />
+								<f:selectItem itemLabel="Otros" itemValue="4" />
+							</h:selectOneListbox></td>
+						<td><h:outputText value="#{msg.registro_telefono_fijo}" /></td>
+						<td><p:inputText /></td>
+						<td><h:outputText value="#{msg.registro_titular_linea}" /></td>
+						<td><p:inputText /></td>
+					</tr>
+					<tr>
+						<td><h:outputText value="#{msg.registro_telefono_Cel}" /></td>
+						<td><p:inputText /></td>
+						<td></td>
+						<td></td>
+						<td><h:outputText value="#{msg.registro_telefono_referencia}" />
+						</td>
+						<td><p:inputText /></td>
+					</tr>
+					<tr>
+						<td><h:outputText value="#{msg.registro_fecha_nacimiento}" />
+						</td>
+						<td><p:calendar /></td>
+						<td><h:outputText value="#{msg.registro_correo}" /></td>
+						<td><p:inputText /></td>
+					</tr>
+					<tr>
+						<td><h:outputText value="#{msg.registro_direccion_trabajo}" />
+						</td>
+						<td><p:inputText /></td>
+						<td align="right"><h:outputText
+								value="#{msg.registro_distrito}" /></td>
+						<td><h:selectOneListbox size="1">
+								<f:selectItem itemLabel="San Martin de Porres" itemValue="1" />
+								<f:selectItem itemLabel="San Isidro" itemValue="1" />
+								<f:selectItem itemLabel="Villa Maria del Triunfo" itemValue="1" />
+							</h:selectOneListbox></td>
+					</tr>
+					<tr>
+						<td><h:outputText value="#{msg.registro_telefono_Trabajo}" /></td>
+						<td><p:inputText /></td>
+						<td><h:outputText value="#{msg.registro_cargo_seccion}" /></td>
+						<td><p:inputText /></td>
+					</tr>
+				</table>
+			</p:panel>
+			<p:panel header="#{msg.panel_sub_seleccion_producto}">
+				<table width="100%">
+					<tr>
+						<td><h:outputText value="#{msg.registro_cantidad}" /></td>
+						<td><p:spinner id="minmax" size="2" min="1" max="10" /></td>
+					</tr>
+				</table>
+			</p:panel>
 		</h:form>
 	</ui:define>
 </ui:composition>
