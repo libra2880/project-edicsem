@@ -10,13 +10,21 @@ public class Kardex {
 	public Kardex() {
 
 	}
-	
+	public int numero;
 	public String registroProducto(){
 		return "/mantenimientoProducto";
 	}
 	
 	public String registroOrdenReposicion(){
 		return "/registroOrdenReposicion";
+	}
+
+	public int getNumero() {
+		return numero;
+	}
+
+	public void setNumero(int numero) {
+		this.numero = numero;
 	}
 	
 }
