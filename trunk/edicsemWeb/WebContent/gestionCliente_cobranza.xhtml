@@ -14,22 +14,22 @@
 				<table width="100%">
 					<tr>
 						<td><h:outputText value="#{msg.registro_nombre}" /></td>
-						<td><p:inputText size="35" /></td>
+						<td><p:inputText size="20" /></td>
 
 						<td><h:outputText value="#{msg.registro_apellidoP}" /></td>
-						<td><p:inputText size="35" /></td>
+						<td><p:inputText size="20" /></td>
 
 						<td><h:outputText value="#{msg.registro_apellidoM}" /></td>
-						<td><p:inputText size="35" /></td>
+						<td><p:inputText size="20" /></td>
 					</tr>
 
 					<tr>
 						<td><h:outputText value="#{msg.registro_DNI}" /></td>
-						<td><p:inputText size="35" /></td>
+						<td><p:inputText size="20" /></td>
 
 						<td><h:outputText value="#{msg.registro_NumeroContrato}" />
 						</td>
-						<td><p:inputText size="35" /></td>
+						<td><p:inputText size="20" /></td>
 
 						<td><h:outputText value="Editorial" /></td>
 						<td><h:selectOneListbox size="1">
@@ -47,7 +47,7 @@
 						
 						
 						<td align="right"><h:outputText value="Referencia: " /></td>
-						<td><p:inputText id="referencia" size="35" /></td>
+						<td><p:inputText id="referencia" size="20" /></td>
 										
 					</tr>
 					
@@ -63,12 +63,14 @@
 						<td><h:outputText value="#{msg.fec_vencimiento}" /></td>
 						
 						<td><h:outputText value="#{msg.desde_fec_vencimiento}" /></td>
-						<td><p:inputText size="20" /></td>
+						<td><p:calendar /></td>
 
 						<td><h:outputText value="#{msg.hasta_fec_vencimiento}" /></td>
-						<td><p:selectBooleanCheckbox  /></td>
+						<td><p:calendar /></td>
 					</tr>
 					<tr>
+					<td></td>
+					<td></td>
 						<td><h:outputText value="#{msg.fec_contrato}" /></td>
 						
 						<td><h:outputText value="#{msg.desde_fec_contrato}" /></td>
@@ -139,47 +141,48 @@
 				<table width="100%">
 					<tr>
 						<td align="right"><h:outputText value="Cliente " /></td>
-						<td><p:inputText id="cliente" size="35" /></td>
+						<td><p:inputText id="cliente" size="20" /></td>
 
 						<td align="right"><h:outputText value="DNI: " /></td>
-						<td><p:inputText id="dni" size="15" maxlength="8" /></td>
+						<td><p:inputText id="dni" size="20" maxlength="8" /></td>
 
 						<td align="right"><h:outputText value="Condicion: " />
 						</td>
-						<td><p:inputText id="condicion" size="30" /></td>
+						<td><p:inputText id="condicion" size="20" /></td>
 					</tr>
 					
 					<tr>
 						<td align="right"><h:outputText value="Celular: " /></td>
-						<td><p:inputText size="15" maxlength="9" /></td>
+						<td><p:inputText size="20" maxlength="9" /></td>
 						
 						<td align="right"><h:outputText value="Telf. Fijo: " /></td>
-						<td><p:inputText maxlength="7" /></td>
+						<td><p:inputText size="20"  maxlength="7" /></td>
 						
 						<td align="right"><h:outputText value="Telf. referencia: " />
 						</td>
-						<td><p:inputText maxlength="7" /></td>
+						<td><p:inputText size="20" maxlength="7" /></td>
 						
 						<td align="right"><h:outputText value="Telf. Trabajo " />
 						</td>
-						<td><p:inputText maxlength="7" /></td>
+						<td><p:inputText size="20" maxlength="7" /></td>
 						
 					</tr>
 					<tr>
 						<td align="right"><h:outputText value="Nro Contrato: " />
 						</td>
-						<td><p:inputText size="30" /></td>
+						<td><p:inputText size="20" /></td>
 						<td align="right"><h:outputText value="Editorial" /></td>
-						<td><p:inputText size="30" /></td>
+						<td><p:inputText size="20" /></td>
 					
 						<td align="right"><h:outputText value="Fecha de Contrato " />
 						</td>
 						<td><p:calendar /></td>
 						<td align="right"><h:outputText value="Total cuotas" /></td>
-						<td><p:inputText size="30" /></td>
+						<td><p:inputText size="20" /></td>
 					</tr>
 
 				</table>
+				<p:spacer width="40" />
 				<div align="center" style="width: 100%">
 					<p:dataTable >
 						<p:column headerText="Cuota">
@@ -221,23 +224,98 @@
 						</div>
 				<br />
 				
-				<table>
+				<table align="center">
 				<tr>
-				
-					<td align="right"><h:outputText value="Fecha de Contrato " />
-						</td>
-						<td><p:calendar /></td>
-						<td align="right"><h:outputText value="Total cuotas" /></td>
-						<td><p:inputText size="30" /></td>
+				<td><h:outputText value="Respuesta" /></td>
+						<td><h:selectOneListbox size="1">
+								<f:selectItem itemLabel="Solicito nuevo plan" itemValue="1" />
+								<f:selectItem itemLabel="volver a llamar" itemValue="2" />
+								<f:selectItem itemLabel="Inubicable" itemValue="3" />
+							</h:selectOneListbox></td>
+							<p:spacer width="30" />
+						<td align="right"><h:outputText value="Observaciones" /></td>
+						<td><p:inputTextarea rows="5" cols="30" counter="counter" maxlength="10"
+						 autoResize="false"></p:inputTextarea> </td>
 					</tr>
 
 				</table>
+				<div>
+				<div  align="center">
+				<p:fieldset>
+				<h:panelGrid>
+				<table>
+				<tr>
+				<h:outputText value="Plan de pago" />
+				<h:selectOneListbox size="1">
+								<f:selectItem itemLabel="Plan 1" itemValue="1" />
+								<f:selectItem itemLabel="Plan 2" itemValue="2" />
+								<f:selectItem itemLabel="Inubicable" itemValue="3" />
+				</h:selectOneListbox>
+				</tr></table>
+				
+				
+				</h:panelGrid>
+				
+				</p:fieldset>
+				</div>
+				
+				<div  align="center">
+				<p:fieldset>
+				<h:panelGrid>
+				<table width="100%" style=" width : 384px;">
+				<tr>
+				<h:outputText value="Plan de pago" />
+				<h:selectOneListbox size="1">
+								<f:selectItem itemLabel="Seleccione" itemValue="1" />
+				</h:selectOneListbox>
+				
+				</tr>
+				<tr>
+						<td><h:outputText value="Hora" /></td>
+						<td><p:spinner id="minmax" size="2" min="1" max="23" /></td>
+						
+						<td><p:spinner id="uh" size="2" min="0" max="59" /></td>
+						
+					</tr>
+					<tr><h:outputText value="Agente" />
+				<h:selectOneListbox size="1">
+								<f:selectItem itemLabel="Seleccione" itemValue="1" />
+				</h:selectOneListbox></tr>
+					</table>
+				
+				
+				</h:panelGrid>
+				
+				</p:fieldset>
+				</div>
+				</div>
 				<div align="center">
 					<p:commandLink title="guardar cliente">
 						<h:graphicImage value="/images/wgd/guardar-cliente.png" />
 					</p:commandLink>
 				</div>
-
+				<p:spacer width="40" />
+				<div align="center" style="width: 100%">
+					<p:dataTable >
+						<p:column headerText="Cuota">
+							<h:outputText value="7" />
+							<h:outputText value="8" />
+							<h:outputText value="9" />
+						</p:column>
+						<p:column headerText="Fec. Vencimiento">
+							<h:outputText value="25/07/2011" />
+							<h:outputText value="22/07/2011" />
+							<h:outputText value="22/07/2011" />
+						</p:column>
+						<p:column headerText="Fecha Postergada">
+							<td align="right"><h:outputText value="Fecha de Contrato " />
+						</td>
+						<td><p:calendar /></td>
+							<h:outputText value="22/02/2011" />
+							<h:outputText value="22/06/2011" />
+						</p:column>
+						</p:dataTable>
+						</div>
 			</p:panel>
 		</h:form>
 		</ui:define>
