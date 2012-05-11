@@ -42,10 +42,10 @@
 							</h:selectOneListbox></td>
 						<td align="right"><h:outputText size="10"
 								value="#{msg.num_documento}" /></td>
-						<td><p:inputText size="15" /></td>
+						<td><p:inputText size="10" /></td>
 						<td align="right"><h:outputText size="10"
 								value="#{msg.costo}" /></td>
-						<td><p:inputText size="15" /></td>
+						<td><p:inputText size="10" /></td>
 						<td align="right"><h:outputText
 								value="#{msg.tipo}" /></td>
 						<td><h:selectOneListbox size="1">
@@ -59,6 +59,35 @@
 					</p:panel>
 
 			<p:panel header="#{msg.panel_salida_mercaderia}">
+		
+			<div align="center" style="width: 100%">
+					<p:dataTable emptyMessage="No se encuentran datos disponibles">
+					
+						<p:column headerText="Punto de Venta">
+							<h:outputText value="Megaplaza" /> 
+						</p:column>
+						<p:column headerText="Registrado por">
+							<h:outputText value="Edgar" /> 
+						</p:column>
+						<p:column headerText="Tipo de producto">
+							<h:outputText value="Biblia" /> 
+						</p:column>
+						<p:column headerText="Producto">
+							<h:outputText value="Biblia Sagrada" /> 
+						</p:column>
+						<p:column headerText="Cantidad">
+							<h:outputText value="2" /> 
+						</p:column>
+						<p:column headerText="Unidad">
+							<h:outputText value="Unidad" /> 
+						</p:column>
+						<p:column headerText="Fecha de entrega">
+							<h:outputText value="25/11/12" /> 
+						</p:column>
+						</p:dataTable>
+						</div>
+			<p:spacer width="30"></p:spacer>
+			
 				<table width="100%">
 					<tr>
 						<td><h:outputText value="#{msg.registro_cantidad}" /></td>
