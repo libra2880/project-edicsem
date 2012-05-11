@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" template="/template/template.xhtml">
+
+	<ui:define name="body">
+		<h:form>
+			<f:loadBundle var="msg" basename="com.wgd.pe.jsf.resources.message" />
+			<h1 class="title ui-widget-header ui-corner-all">
+				<h:outputText value="#{msg.titulo_movimiento_mercaderia}" />
+			</h1>
+
+			<p:panel header="#{msg.panel_ingreso_mercaderia}">
+				<table width="100%">
+					<tr>
+						<td><h:outputText value="#{msg.registro_cantidad}" /></td>
+						<td><p:spinner id="minmax" size="2" min="1" max="10" /></td>
+
+						<td><h:outputText value="#{msg.tipo_producto}" /></td>
+						<td><h:selectOneListbox size="1">
+								<f:selectItem itemLabel="Biblia" itemValue="1" />
+								<f:selectItem itemLabel="Libro" itemValue="2" />
+								<f:selectItem itemLabel="Otros" itemValue="3" />
+							</h:selectOneListbox></td>
+
+						<td><h:outputText value="#{msg.fabricante_editorial}" /></td>
+						<td><h:selectOneListbox size="1">
+								<f:selectItem itemLabel="Seleccione" itemValue="1" />
+							</h:selectOneListbox></td>
+
+						<td><h:outputText value="#{msg.producto}" /></td>
+						<td><h:selectOneListbox size="1">
+								<f:selectItem itemLabel="Seleccione" itemValue="1" />
+							</h:selectOneListbox></td>
+					</tr>
+					<tr>
+						<td><h:outputText value="#{msg.tipo_documento}" /></td>
+						<td><h:selectOneListbox size="1">
+								<f:selectItem itemLabel="Guia de Ingreso" itemValue="1" />
+							</h:selectOneListbox></td>
+						<td align="right"><h:outputText
+								value="#{msg.num_documento}" /></td>
+						<td><p:inputText size="20" /></td>
+						<td align="right"><h:outputText
+								value="#{msg.costo}" /></td>
+						<td><p:inputText size="20" /></td>
+						<td align="right"><h:outputText
+								value="#{msg.tipo}" /></td>
+						<td><h:selectOneListbox size="1">
+								<f:selectItem itemLabel="Compra" itemValue="1" />
+								<f:selectItem itemLabel="Devolución punto Venta" itemValue="2" />
+								<f:selectItem itemLabel="Devolución cliente" itemValue="3" />
+								<f:selectItem itemLabel="Ajuste de saldo" itemValue="4" />
+							</h:selectOneListbox></td>
+					</tr>
+					</table>
+					</p:panel>
+
+			<p:panel header="#{msg.panel_salida_mercaderia}">
+				<table width="100%">
+					<tr>
+						<td><h:outputText value="#{msg.registro_cantidad}" /></td>
+						<td><p:spinner id="minmax" size="2" min="1" max="10" /></td>
+					</tr>
+				</table>
+			</p:panel>
+		</h:form>
+	</ui:define>
+</ui:composition>
