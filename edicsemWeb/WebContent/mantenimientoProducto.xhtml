@@ -52,7 +52,13 @@
 									value="#{login.usuario}" maxlength="15" rows="8" cols="50" />
 							</td>
                 
-							<td><p:fileUpload value="#{msg.imagen_producto}" mode="simple"/> </td>
+							<td><p:fileUpload value="#{msg.imagen_producto}" mode="simple"
+							 auto="true" label="Cargar Doc." allowTypes="*.jpg;*.png;*.gif;" 
+							 multiple="false" customUI="true" required="true"/>
+							
+							 <p:graphicImage id="imgProducto" style="height:50%;width:50%"/>
+							 
+							 </td>
 							<td colspan="1"><p:commandButton value="Submit" ajax="false"/></td>
 						</tr>
 						<tr>
@@ -66,8 +72,7 @@
 									<td><h:outputText value="#{msg.precio_venta}" /></td>
 						<td><p:inputText id="precio_venta" 
 									value="Precio Venta" maxlength="15" /></td>
-									
-						
+									 
 						</tr>
 						<tr>
 							<td colspan="10">
