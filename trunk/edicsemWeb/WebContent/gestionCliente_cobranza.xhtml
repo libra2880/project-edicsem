@@ -42,17 +42,17 @@
 					<tr>
 
 						<td><h:outputText value="#{msg.registro_telefono_Cel}" /></td>
-						<td><p:inputText size="15" /></td>
+						<td><p:inputText size="15"  mask="999999999" required="true" /></td>
 
 						<td><h:outputText value="#{msg.registro_telefono_fijo}" /></td>
-						<td><p:inputText size="15" /></td>
+						<td><p:inputText size="15"  mask="999-9999" required="true"/></td>
 
 
 						<td><h:outputText value="Referencia: " /></td>
 						<td><p:inputText id="referencia" size="15" /></td>
 
 						<td><h:outputText value="Telef. Trabajo " /></td>
-						<td><p:inputText id="tlf_trabajo" size="15" /></td>
+						<td><p:inputText id="tlf_trabajo" size="15" mask="999-9999" required="true"/></td>
 					</tr>
 
 					<tr>
@@ -152,7 +152,7 @@
 						<td><p:inputText id="cliente" size="15" /></td>
 
 						<td align="right"><h:outputText value="DNI: " /></td>
-						<td><p:inputText id="dni" size="15" maxlength="8" /></td>
+						<td><p:inputText id="dni" size="15" maxlength="8" mask="99999999" required="true"/></td>
 
 						<td align="right"><h:outputText value="Condicion: " /></td>
 						<td><p:inputText id="condicion" size="15" /></td>
@@ -160,10 +160,10 @@
 
 					<tr>
 						<td align="right"><h:outputText value="Celular: " /></td>
-						<td><p:inputText size="15" maxlength="9" /></td>
+						<td><p:inputText size="15" maxlength="9" mask="999999999" required="true"/></td>
 
 						<td align="right"><h:outputText value="Telf. Fijo: " /></td>
-						<td><p:inputText size="15" maxlength="7" /></td>
+						<td><p:inputText size="15" maxlength="7" mask="999-9999" required="true"/></td>
 
 						<td align="right"><h:outputText value="Telf. referencia: " />
 						</td>
