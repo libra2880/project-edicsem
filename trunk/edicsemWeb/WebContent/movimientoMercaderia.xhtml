@@ -55,6 +55,14 @@
 								<f:selectItem itemLabel="Ajuste de saldo" itemValue="4" />
 							</h:selectOneListbox></td>
 					</tr>
+					<tr>
+					<td colspan="10">
+								<div align="center">
+									<p:commandButton value="Añadir Producto"
+										 ajax="false" />
+								</div>
+							</td>
+					</tr>
 					</table>
 					</p:panel>
 
@@ -88,11 +96,79 @@
 						</div>
 			<p:spacer width="30"></p:spacer>
 			
+								<div align="center">
+									<p:commandButton value="Aprobar"
+										 ajax="false" />
+								</div>
 				<table width="100%">
 					<tr>
 						<td><h:outputText value="#{msg.registro_cantidad}" /></td>
 						<td><p:spinner id="minmaxC" size="2" min="1" max="10" /></td>
-					</tr>
+						
+						<td><h:outputText value="#{msg.tipo_producto}" /></td>
+							<td><h:selectOneListbox size="1"
+									value="#{archivosBDBM.objProyecto.idmodalidad}">
+									<f:selectItem itemValue="1" itemLabel="Libro" />
+									<f:selectItem itemValue="2" itemLabel="Biblias" />
+									<f:selectItem itemValue="3" itemLabel="Otros" />
+								</h:selectOneListbox></td>
+								<td><h:outputText value="#{msg.fabricante_editorial}" /></td>
+							<td ><h:selectOneListbox size="1"
+									value="#{archivosBDBM.objProyecto.idmodalidad}">
+									<f:selectItem itemValue="1" itemLabel="-- Seleccione --" />
+									<f:selectItem itemValue="2" itemLabel="Sembrano" />
+								</h:selectOneListbox></td>
+								<td><h:outputText value="#{msg.producto}" /></td>
+							<td ><h:selectOneListbox size="1" >
+									<f:selectItem itemValue="1" itemLabel="-- Seleccione --" /> 
+								</h:selectOneListbox></td>
+								
+					</tr><tr>
+					<td colspan="8" align="right"><p:commandButton value="Ver imagen"
+										 ajax="false" /></td>
+										 
+										 </tr>
+										 
+										 
+										 <tr><td><h:outputText value="Punto de Venta" /></td>
+						<td><h:selectOneListbox size="1">
+								<f:selectItem itemLabel="Habich" itemValue="1" />
+								<f:selectItem itemLabel="Paulet" itemValue="2" />
+								<f:selectItem itemLabel="Megaplaza" itemValue="3" />
+								<f:selectItem itemLabel="Otros" itemValue="4" />
+							</h:selectOneListbox></td>
+										
+								<td><h:outputText value="Nro. Documento" /></td>
+								<td><h:inputText  size="10"/> </td>
+								<td align="right"><h:outputText
+								value="#{msg.tipo}" /></td>
+						<td><h:selectOneListbox size="1">
+								<f:selectItem itemLabel="Compra" itemValue="1" />
+								<f:selectItem itemLabel="Devolución punto Venta" itemValue="2" />
+								<f:selectItem itemLabel="Devolución cliente" itemValue="3" />
+								<f:selectItem itemLabel="Ajuste de saldo" itemValue="4" />
+							</h:selectOneListbox></td></tr>
+							<tr><td><h:outputText value="#{msg.tipo_documento}" /></td>
+						<td><h:selectOneListbox size="1">
+								<f:selectItem itemLabel="Guia de remision" itemValue="1" />
+							</h:selectOneListbox></td></tr>
+							<tr>
+					<td colspan="8" align="center"><p:commandButton value="Añadir Producto"
+										 ajax="false" /></td>
+										 
+										 </tr>
+										 <tr><p:spacer width="35"></p:spacer> </tr>
+							<tr>
+							<td colspan="10">
+								<div align="center">
+									<p:commandButton value="#{msg.boton_grabar}"
+										action="#{login.login}" ajax="false" />
+									<p:commandButton value="#{msg.boton_limpiar}"
+										action="#{login.login}" ajax="false" />
+
+								</div>
+							</td>
+						</tr>
 				</table>
 			</p:panel>
 		</h:form>

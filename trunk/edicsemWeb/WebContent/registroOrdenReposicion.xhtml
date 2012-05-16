@@ -6,6 +6,9 @@
 	xmlns:p="http://primefaces.org/ui" template="/template/template.xhtml">
 
 	<ui:define name="body">
+	<h1 class="title ui-widget-header ui-corner-all" align="center">
+			<h:outputText style=" align:center"  value="#{msg.orden_reposicion_titulo}" />
+		</h1>
 		<f:loadBundle var="msg" basename="com.wgd.pe.jsf.resources.message" />
 		<h:form>
 			<div align="center">
@@ -13,8 +16,7 @@
 					<tr>
 						<td></td>
 						<!-- LOGIN -->
-						<td align="center"><p:panel
-								header="#{msg.orden_reposicion_titulo}">
+						<td align="center"><p:panel >
 								<table width="100%">
 
 									<tr>
