@@ -9,30 +9,32 @@
 	
 
 	<ui:define name="body">
-		
+		<h1 class="title ui-widget-header ui-corner-all" align="center">
+			<h:outputText style=" align:center"  value="#{msg.mantenimiento_producto_titulo}" />
+		</h1>
 		<h:form>
 		<f:loadBundle var="msg" basename="com.wgd.pe.jsf.resources.message" />
-				<p:panel header="#{msg.mantenimiento_producto_titulo}">
+				<p:panel >
 					<table width="100%">
 						<tr>
 							<td><h:outputText value="#{msg.codigo_producto}" /></td>
 							<td><p:inputText id="codigoProducto"
-									value="#{login.usuario}" maxlength="15" /></td>
+									value="#{login.usuario}" size="10"  /></td>
 							<td><h:outputText value="#{msg.fabricante_editorial}" /></td>
-							<td colspan="2"><h:selectOneListbox size="1"
+							<td ><h:selectOneListbox size="1"
 									value="#{archivosBDBM.objProyecto.idmodalidad}">
 									<f:selectItem itemValue="1" itemLabel="-- Seleccione --" />
 									<f:selectItem itemValue="2" itemLabel="Sembrano" />
 								</h:selectOneListbox></td>
 
 							<td><h:outputText value="#{msg.anio}" /></td>
-							<td colspan="2"><h:selectOneListbox size="1"
+							<td><h:selectOneListbox size="1"
 									value="#{archivosBDBM.objProyecto.idmodalidad}">
 									<f:selectItem itemValue="1" itemLabel="2011" />
 									<f:selectItem itemValue="2" itemLabel="2012" />
 								</h:selectOneListbox></td>
 							<td><h:outputText value="#{msg.tipo_producto}" /></td>
-							<td colspan="2"><h:selectOneListbox size="1"
+							<td><h:selectOneListbox size="1"
 									value="#{archivosBDBM.objProyecto.idmodalidad}">
 									<f:selectItem itemValue="1" itemLabel="Libro" />
 									<f:selectItem itemValue="2" itemLabel="Biblias" />
@@ -42,36 +44,36 @@
 
 						<tr>
 							<td><h:outputText value="#{msg.nombre_producto}" /></td>
-							<td><p:inputText id="x" value="#{login.usuario}"
-									maxlength="15" /></td>
+							<td><p:inputText id="x" value="#{login.usuario}" size="10"
+								  /></td>
 						</tr>
 
 						<tr>
 							<td><h:outputText value="#{msg.detalle_producto}" /></td>
-							<td colspan="1"><p:inputTextarea id="y"
-									value="#{login.usuario}" maxlength="15" rows="8" cols="50" />
+							<td colspan="5"><p:inputTextarea id="y" size="10"
+									value="#{login.usuario}"  rows="8" cols="50" />
 							</td>
                 
-							<td><p:fileUpload value="#{msg.imagen_producto}" mode="simple"
+							<td colspan="2"><p:fileUpload value="#{msg.imagen_producto}" mode="simple"
 							 auto="true" label="Cargar Doc." allowTypes="*.jpg;*.png;*.gif;" 
-							 multiple="false" customUI="true" required="true"/>
+							 multiple="false" customUI="true" required="true" size="10"/>
 							
 							 <p:graphicImage id="imgProducto" style="height:50%;width:50%"/>
 							 
 							 </td>
-							<td colspan="1"><p:commandButton value="Submit" ajax="false"/></td>
+							<td />
 						</tr>
 						<tr>
 						
 						<td><h:outputText value="#{msg.unidad_producto}" /></td>
-						<td><p:inputText id="unidadProducto"
-									value="Unidad" maxlength="15" /></td>
+						<td><p:inputText id="unidadProducto" size="10"
+									value="Unidad" maxlength="10" /></td>
 							<td><h:outputText value="#{msg.stock_minimo_producto}" /></td>
-							<td><p:inputText id="stock_minimo_producto"
-									value="Stock" maxlength="15" /></td>
+							<td><p:inputText id="stock_minimo_producto" size="10"
+									value="Stock" maxlength="10" /></td>
 									<td><h:outputText value="#{msg.precio_venta}" /></td>
-						<td><p:inputText id="precio_venta" 
-									value="Precio Venta" maxlength="15" /></td>
+						<td><p:inputText id="precio_venta"  size="10"
+									value="Precio Venta" maxlength="10" /></td>
 									 
 						</tr>
 						<tr>

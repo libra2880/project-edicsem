@@ -15,21 +15,21 @@
 			<p:panel header="#{msg.panel_titulo_registro_contrato}">
 				<table width="100%">
 					<tr>
-						<td align="right"><h:outputText
+						<td><h:outputText
 								value="#{msg.registro_nombre}" /></td>
-						<td><p:inputText /></td>
-						<td align="right"><h:outputText
+						<td><p:inputText size="15" /></td>
+						<td ><h:outputText
 								value="#{msg.registro_apellidoP}" /></td>
-						<td><p:inputText size="25" /></td>
-						<td align="right"><h:outputText
+						<td><p:inputText size="15" /></td>
+						<td ><h:outputText
 								value="#{msg.registro_apellidoM}" /></td>
-						<td><p:inputText size="25" /></td>
+						<td><p:inputText size="15" /></td>
 					</tr>
 
 					<tr>
-						<td align="right"><h:outputText value="#{msg.registro_DNI}" /></td>
-						<td><p:inputText /></td>
-						<td align="right"><h:outputText
+						<td><h:outputText value="#{msg.registro_DNI}" /></td>
+						<td><p:inputText size="15"  /></td>
+						<td><h:outputText
 								value="#{msg.registro_empresa}" /></td>
 						<td><h:selectOneListbox id="basic" size="1">
 								<f:selectItem itemLabel="EDICSEM" itemValue="1" />
@@ -38,24 +38,24 @@
 							</h:selectOneListbox></td>
 					</tr>
 					<tr>
-						<td align="right"><h:outputText
+						<td ><h:outputText
 								value="#{msg.registro_direccion}" /></td>
-						<td><p:inputText /></td>
-						<td align="right"><h:outputText
+						<td><p:inputText size="15" /></td>
+						<td ><h:outputText
 								value="#{msg.registro_departamento}" /></td>
 						<td><h:selectOneListbox id="dept" size="1">
 								<f:selectItem itemLabel="Lima" itemValue="1" />
 								<f:selectItem itemLabel="Arequipa" itemValue="1" />
 								<f:selectItem itemLabel="Piura" itemValue="1" />
 							</h:selectOneListbox></td>
-						<td align="right"><h:outputText
+						<td ><h:outputText
 								value="#{msg.registro_provincia}" /></td>
 						<td><h:selectOneListbox id="prov" size="1">
 								<f:selectItem itemLabel="Lima" itemValue="1" />
 								<f:selectItem itemLabel="Chincha" itemValue="1" />
 								<f:selectItem itemLabel="Chaclacayo" itemValue="1" />
 							</h:selectOneListbox></td>
-						<td align="right"><h:outputText
+						<td ><h:outputText
 								value="#{msg.registro_distrito}" /></td>
 						<td><h:selectOneListbox id="dist" size="1">
 								<f:selectItem itemLabel="San Martin de Porres" itemValue="1" />
@@ -64,10 +64,10 @@
 							</h:selectOneListbox></td>
 					</tr>
 					<tr>
-						<td align="right"><h:outputText
+						<td ><h:outputText
 								value="#{msg.registro_referencia}" /></td>
-						<td><p:inputText /></td>
-						<td align="right"><h:outputText value="#{msg.registro_casa} " /></td>
+						<td><p:inputText size="15" /></td>
+						<td><h:outputText value="#{msg.registro_casa} " /></td>
 						<td><h:selectOneListbox id="casa" size="1">
 								<f:selectItem itemLabel="Propia" itemValue="1" />
 								<f:selectItem itemLabel="Alquilada" itemValue="2" />
@@ -75,31 +75,31 @@
 								<f:selectItem itemLabel="Otros" itemValue="4" />
 							</h:selectOneListbox></td>
 						<td><h:outputText value="#{msg.registro_telefono_fijo}" /></td>
-						<td><p:inputText /></td>
+						<td><p:inputText size="15" /></td>
 						<td><h:outputText value="#{msg.registro_titular_linea}" /></td>
-						<td><p:inputText /></td>
+						<td><p:inputText size="15" /></td>
 					</tr>
 					<tr>
 						<td><h:outputText value="#{msg.registro_telefono_Cel}" /></td>
-						<td><p:inputText /></td>
+						<td><p:inputText size="15" /></td>
 						<td></td>
 						<td></td>
 						<td><h:outputText value="#{msg.registro_telefono_referencia}" />
 						</td>
-						<td><p:inputText /></td>
+						<td><p:inputText size="15" /></td>
 					</tr>
 					<tr>
 						<td><h:outputText value="#{msg.registro_fecha_nacimiento}" />
 						</td>
-						<td><p:calendar /></td>
+						<td><p:calendar size="15" /></td>
 						<td><h:outputText value="#{msg.registro_correo}" /></td>
-						<td><p:inputText /></td>
+						<td><p:inputText size="15" /></td>
 					</tr>
 					<tr>
 						<td><h:outputText value="#{msg.registro_direccion_trabajo}" />
 						</td>
-						<td><p:inputText /></td>
-						<td align="right"><h:outputText
+						<td><p:inputText size="15" /></td>
+						<td ><h:outputText
 								value="#{msg.registro_distrito}" /></td>
 						<td><h:selectOneListbox size="1">
 								<f:selectItem itemLabel="San Martin de Porres" itemValue="1" />
@@ -109,9 +109,9 @@
 					</tr>
 					<tr>
 						<td><h:outputText value="#{msg.registro_telefono_Trabajo}" /></td>
-						<td><p:inputText /></td>
+						<td><p:inputText size="15" /></td>
 						<td><h:outputText value="#{msg.registro_cargo_seccion}" /></td>
-						<td><p:inputText /></td>
+						<td><p:inputText size="15" /></td>
 					</tr>
 				</table>
 			</p:panel>
@@ -120,7 +120,92 @@
 					<tr>
 						<td><h:outputText value="#{msg.registro_cantidad}" /></td>
 						<td><p:spinner id="minmax" size="2" min="1" max="10" /></td>
+						
+						<td><h:outputText value="#{msg.tipo_producto}" /></td>
+						<td><h:selectOneListbox size="1">
+								<f:selectItem itemLabel="Biblia" itemValue="1" />
+								<f:selectItem itemLabel="Libro" itemValue="2" />
+								<f:selectItem itemLabel="Otros" itemValue="3" />
+							</h:selectOneListbox></td>
+							<td><h:outputText value="#{msg.producto}" /></td>
+						<td><h:selectOneListbox size="1">
+								<f:selectItem itemLabel="Seleccione" itemValue="1" />
+							</h:selectOneListbox></td>
+							<td><h:outputText value="#{msg.tipo}" /></td>
+						<td><h:selectOneListbox size="1">
+								<f:selectItem itemLabel="venta" itemValue="1" />
+								<f:selectItem itemLabel="regalo" itemValue="1" />
+							</h:selectOneListbox></td>
+							<td><h:outputText value="Precio" /></td>
+						<td><p:inputText  size="15"/>S/. </td>
 					</tr>
+					<tr>
+					<td><h:outputText value="#{msg.unidad_producto}" /></td>
+						<td><p:inputText id="unidadProducto" size="10"
+									value="Unidad" maxlength="10" disabled="true" /></td>
+						<td colspan="10" align="right" ><p:commandButton value="Añadir producto"
+										  ajax="false" /></td></tr>
+					<tr align="center">	<td colspan="10" align="center" ><p:commandButton value="Ver imagen"
+										 /></td></tr>
+					
+				</table>
+			</p:panel>
+			<p:panel header="#{msg.panel_sub_plan_pagos}">
+				<table width="100%">
+					<tr>
+					
+					 
+        <td  ><p:selectOneRadio id="options">  
+            <tr><f:selectItem itemLabel="Credito" itemValue="1" />  </tr> 
+          
+        </p:selectOneRadio></td>
+        
+						<td><h:outputText value="A cuenta" /></td>
+						<td><p:inputText  size="9"/>S/. </td>
+						
+						<td><h:outputText value="Cuota Inicial" /></td>
+						<td><p:inputText  size="9"/>S/. </td>
+						
+						<td><h:outputText value="Total" /></td>
+						<td><p:inputText  size="9"/>S/. </td>
+						
+						<td><h:outputText value="Fecha Entrega" /></td>
+						<td><p:calendar   size="9"></p:calendar> </td>
+						
+					</tr>
+						<tr> 
+									 
+        <td  ><p:selectOneRadio id="options2">  
+            <tr><f:selectItem itemLabel="Contado" itemValue="2" />  </tr> 
+          
+        </p:selectOneRadio></td>
+        <td></td><td></td>
+						<td><h:outputText value="Cuotas" /></td>
+						<td><p:spinner id="sp" size="2" min="1" max="10" /></td>
+						<td><h:outputText value="de" /></td>
+						<td><p:inputText   size="9" /></td>
+						
+						<td><h:outputText value="Fecha de Pago Inicial" /></td>
+						<td><p:calendar   size="9"></p:calendar> </td>
+						</tr>
+						
+						<tr>
+						<td><h:outputText value="Lugar de Entrega" /></td>
+						<td  colspan="4"><p:inputText   size="15" /></td>
+						<td><h:outputText value="Hora de llamada" /></td>
+						<td><p:inputText   size="9" /></td></tr>
+					<tr>
+					
+							<td colspan="10">
+								<div align="center">
+									<p:commandButton value="#{msg.boton_grabar}"
+										action="#{login.login}" ajax="false" />
+									<p:commandButton value="#{msg.boton_limpiar}"
+										action="#{login.login}" ajax="false" />
+
+								</div>
+							</td>
+						</tr>
 				</table>
 			</p:panel>
 		</h:form>
