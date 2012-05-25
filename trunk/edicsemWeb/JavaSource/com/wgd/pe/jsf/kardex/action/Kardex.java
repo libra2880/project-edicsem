@@ -12,7 +12,7 @@ public class Kardex {
 	}
 	public int numero;
 	public String registroProducto(){
-		return "/mantenimientoProducto";
+		return "/loginNext";
 	}
 	
 	public String registroOrdenReposicion(){
