@@ -33,6 +33,13 @@ body {
 
 
 <h:form>
+<p:notificationBar position="top" effect="slide" widgetVar="bar" styleClass="top">  
+    <h:outputText value="DEMO! " style="color:#FFCC00;font-size:36px;" />  
+</p:notificationBar>  
+  
+<p:commandButton value="Show" onclick="bar.show()" type="button" />  
+<p:commandButton value="Hide" onclick="bar.hide()" type="button" /> 
+
   <div align="center" style="margin-bottom: 60px">
 
 			<table border="0" width="100%">
