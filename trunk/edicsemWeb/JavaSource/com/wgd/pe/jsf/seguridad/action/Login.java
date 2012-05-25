@@ -40,12 +40,12 @@ public class Login {
 	}
 
 	//MI ACTION
-	public String login(){
+	public String ingresar(){
 		String resultado="";
 		try {
 			// CUARTO DE DIEGO 6506432
 			if (objFacadeSeguridad.login(usuario, contrasenia)==1) {
-				resultado="/result";
+				resultado="result";
 			}else {
 				resultado="login";
 				FacesContext.getCurrentInstance().addMessage
