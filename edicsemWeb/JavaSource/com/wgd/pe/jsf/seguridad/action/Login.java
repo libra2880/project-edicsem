@@ -45,7 +45,7 @@ public class Login {
 		try {
 			// CUARTO DE DIEGO 6506432
 			if (objFacadeSeguridad.login(usuario, contrasenia)==1) {
-				resultado="loginNext";
+				resultado="/result";
 			}else {
 				resultado="login";
 				FacesContext.getCurrentInstance().addMessage
@@ -58,5 +58,7 @@ public class Login {
 		}
 		return resultado; 
 	}
-	
+	public String ingreso(){
+		return "/loginNext";
+	}
 }
