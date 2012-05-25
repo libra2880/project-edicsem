@@ -37,7 +37,7 @@ body {
 	
 		<div>
 			<div align="center" style="float: left; background-color: lightblue; border-bottom-color: black; border: 2  "  >
-			<div style="height: 250px" ></div>
+			 <div style="height: 250px" ></div>
 			<div>
 				<p:fieldset legend="Demo W.G.D">
 					<h:panelGrid >
@@ -79,7 +79,6 @@ body {
  -->	
 <div style="height: 280px" ></div>
 			</div>
-
 			<div align="center" style="margin-bottom: 60px; float: left">
 
 				<table border="0" width="800px">
@@ -97,19 +96,24 @@ body {
 								<table>
 									<tr style="height: 50px"></tr>
 									<tr style="height: 50px">
-										<td><h:outputText value="#{msg.usuario_login}" /></td>
-										<td><p:inputText id="usuario" value="#{login.usuario}"
-												maxlength="15" /></td>
-									</tr>
+										<td><h:outputText value="#{msg.usuario_rol}" /></td>
+										<td><h:selectOneListbox size="1">
+								<f:selectItem itemLabel="Administrador" itemValue="1" />
+								<f:selectItem itemLabel="Encargado de Telecobranza" itemValue="2" />
+								<f:selectItem itemLabel="Encargo de Almacen" itemValue="2" />
+							</h:selectOneListbox></td>
+							</tr>
 									<tr style="height: 50px">
-										<td><h:outputText value="#{msg.usuario_contrasenia}" /></td>
-										<td><p:password id="password" minLength="15"
-												value="#{login.contrasenia}" maxlength="15" feedback="false" /></td>
+										<td><h:outputText value="#{msg.usuario_organizacion}" /></td>
+										<td><h:selectOneListbox size="1">
+								<f:selectItem itemLabel="Edicsem" itemValue="1" />
+								<f:selectItem itemLabel="Mobima" itemValue="2" /> 
+							</h:selectOneListbox></td>
 									</tr>
 									<tr style="height: 50px">
 										<td colspan="2">
 											<div align="center">
-												<p:commandButton value="Ingresar al Sistema"
+												<p:commandButton value="Ingresar"
 													action="#{login.login}" ajax="false" />
 											</div>
 										</td>
