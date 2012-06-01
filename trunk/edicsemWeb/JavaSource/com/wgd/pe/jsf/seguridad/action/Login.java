@@ -58,7 +58,4 @@ public class Login {
 		}
 		return resultado; 
 	}
-	public String ingreso(){
-		return "/loginNext";
-	}
 }
