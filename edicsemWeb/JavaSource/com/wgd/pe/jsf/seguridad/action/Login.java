@@ -40,7 +40,7 @@ public class Login {
 	}
 
 	//MI ACTION
-	public String ingresar(){
+	public String login(){
 		String resultado="";
 		try {
 			// CUARTO DE DIEGO 6506432
